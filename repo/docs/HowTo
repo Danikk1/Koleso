@@ -1,0 +1,6 @@
+docker-compose up -d --build
+
+
+echo "http://$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' repo-frontend-1):3000" | xargs xdg-open 2>/dev/null || echo "Откройте в браузере: http://$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' repo-frontend-1):3000"
+
+
